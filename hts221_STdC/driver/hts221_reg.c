@@ -875,8 +875,11 @@ int32_t hts221_hum_adc_point_0_get(stmdev_ctx_t *ctx, float_t *val)
 {
   uint8_t coeff[2];
   int32_t ret;
+  int16_t temp;
   ret = hts221_read_reg(ctx, HTS221_H0_T0_OUT_L, coeff, 2);
-  *val = (coeff[1] * 256) + coeff[0];
+  //*val = (coeff[1] * 256) + coeff[0];
+  temp = (coeff[1] * 256) + coeff[0];
+  *val = (float) temp;
   return ret;
 }
 
@@ -892,8 +895,11 @@ int32_t hts221_hum_adc_point_1_get(stmdev_ctx_t *ctx, float_t *val)
 {
   uint8_t coeff[2];
   int32_t ret;
+  int16_t temp;
   ret = hts221_read_reg(ctx, HTS221_H1_T0_OUT_L, coeff, 2);
-  *val = (coeff[1] * 256) + coeff[0];
+  //*val = (coeff[1] * 256) + coeff[0];
+    temp = (coeff[1] * 256) + coeff[0];
+    *val = (float) temp;
   return ret;
 }
 
@@ -909,8 +915,11 @@ int32_t hts221_temp_adc_point_0_get(stmdev_ctx_t *ctx, float_t *val)
 {
   uint8_t coeff[2];
   int32_t ret;
+  int16_t temp;
   ret = hts221_read_reg(ctx, HTS221_T0_OUT_L, coeff, 2);
-  *val = (coeff[1] * 256) + coeff[0];
+  //*val = (coeff[1] * 256) + coeff[0];
+    temp = (coeff[1] * 256) + coeff[0];
+    *val = (float) temp;
   return ret;
 }
 
@@ -926,8 +935,11 @@ int32_t hts221_temp_adc_point_1_get(stmdev_ctx_t *ctx, float_t *val)
 {
   uint8_t coeff[2];
   int32_t ret;
+  int16_t temp;
   ret = hts221_read_reg(ctx, HTS221_T1_OUT_L, coeff, 2);
-  *val = (coeff[1] * 256) + coeff[0];
+  //*val = (coeff[1] * 256) + coeff[0];
+    temp = (coeff[1] * 256) + coeff[0];
+    *val = (float) temp;
   return ret;
 }
 
